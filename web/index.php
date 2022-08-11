@@ -20,10 +20,10 @@
 	$stmt = $pdo->query("UPDATE salesforce.account SET memo_all__c='メモ' WHERE id=1;");
 	$rs = $stmt->fetchall();
  
-	// debug
-	echo '<pre>';
-	echo var_dump($rs);
-	echo '</pre>';
+	// // debug
+	// echo '<pre>';
+	// echo var_dump($rs);
+	// echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="jp">
