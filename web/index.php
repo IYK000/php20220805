@@ -1,6 +1,4 @@
-<?php 
-  phpinfo();
-?>
+
 <!DOCTYPE html>
 <html lang="jp">
 <head>
@@ -10,6 +8,8 @@
   <title>Document</title>
 </head>
 <body>
-  hello world!!
+<?php 
+  echo 'hello world!';
+?>
 </body>
 </html>
