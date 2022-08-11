@@ -17,7 +17,6 @@
 	}
 
 	// SQL
-	$pdo->query("SELECT name, FROM Account;");
 	$stmt = $pdo->query("SELECT id, name FROM salesforce.account;");
 	$rs = $stmt->fetchall();
  
