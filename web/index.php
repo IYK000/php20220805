@@ -16,8 +16,8 @@
 			$msg       = "DB接続に失敗しました。<br>(" . $e->getMessage() . ")";
 	}
 
-	// // SQL
-	// $stmt = $pdo->query("SELECT id, name FROM Account;");
+	// SQL
+	$stmt = $pdo->query("SELECT id, name FROM Account;");
 	// $rs = $stmt->fetchall();
 
 	// // debug
