@@ -17,7 +17,7 @@
 	}
 
 	// SQL
-	$stmt = $pdo->query("SELECT id, name FROM salesforce.account;");
+	$stmt = $pdo->query("UPDATE salesforce.account SET name='個人取引先②' WHERE id=1;");
 	$rs = $stmt->fetchall();
  
 	// debug
