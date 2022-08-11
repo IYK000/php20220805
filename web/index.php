@@ -17,9 +17,10 @@
 	}
 
 	// SQL
-	$stmt = $pdo->query("SELECT id, name FROM Account;");
+	$pdo->query("SELECT name, FROM Account;");
+	//$stmt = $pdo->query("SELECT id, name FROM Account;");
 	// $rs = $stmt->fetchall();
-
+ 
 	// // debug
 	// echo '<pre>';
 	// echo var_dump($rs);
