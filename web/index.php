@@ -18,13 +18,13 @@
 
 	// SQL
 	$pdo->query("SELECT name, FROM Account;");
-	//$stmt = $pdo->query("SELECT id, name FROM Account;");
-	// $rs = $stmt->fetchall();
+	$stmt = $pdo->query("SELECT id, name FROM salesforce.account;");
+	$rs = $stmt->fetchall();
  
-	// // debug
-	// echo '<pre>';
-	// echo var_dump($rs);
-	// echo '</pre>';
+	// debug
+	echo '<pre>';
+	echo var_dump($rs);
+	echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="jp">
