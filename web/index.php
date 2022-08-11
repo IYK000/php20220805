@@ -16,14 +16,14 @@
 			$msg       = "DB接続に失敗しました。<br>(" . $e->getMessage() . ")";
 	}
 
-	// SQL
-	$stmt = $pdo->query("SELECT id, name FROM Account;");
-	$rs = $stmt->fetchall();
+	// // SQL
+	// $stmt = $pdo->query("SELECT id, name FROM Account;");
+	// $rs = $stmt->fetchall();
 
-	// debug
-	echo '<pre>';
-	echo var_dump($rs);
-	echo '</pre>';
+	// // debug
+	// echo '<pre>';
+	// echo var_dump($rs);
+	// echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="jp">
