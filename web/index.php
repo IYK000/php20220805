@@ -17,7 +17,7 @@ try {
 	));
 	} catch (PDOException $e) {
 		$isConnect = false;
-		$msg       = "MySQL への接続に失敗しました。<br>(" . $e->getMessage() . ")";
+		$msg       = "接続に失敗しました。<br>(" . $e->getMessage() . ")";
 	}
 
 	// debug
