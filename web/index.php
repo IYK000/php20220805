@@ -14,6 +14,11 @@ try {
 		$isConnect = false;
 		$msg       = "MySQL への接続に失敗しました。<br>(" . $e->getMessage() . ")";
 	}
+
+	// debug
+	echo '<pre>';
+	echo var_dump($db);
+	echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="jp">
