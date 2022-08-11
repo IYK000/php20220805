@@ -18,9 +18,9 @@ try {
 	// }
 
 	// debug
-	echo '<pre>';
-	echo var_dump("aa");
-	echo '</pre>';
+	// echo '<pre>';
+	// echo var_dump("aa");
+	// echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="jp">
@@ -31,6 +31,6 @@ try {
 	<title>Document</title>
 </head>
 <body>
-	<p><?php echo $msg; ?></p>
+	<p>aa</p>
 </body>
 </html>
