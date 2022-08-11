@@ -14,12 +14,11 @@
 	} catch (PDOException $e) {
 			$isConnect = false;
 			$msg       = "DB接続に失敗しました。<br>(" . $e->getMessage() . ")";
-			exit();
 	}
 
 	// SQL
-	$stmt = $pdo->query ( "SELECT id, name FROM Account;" );
-	$rs = $stmt->fetchall ();
+	$stmt = $pdo->query("SELECT id, name FROM Account;");
+	$rs = $stmt->fetchall();
 
 	// debug
 	echo '<pre>';
