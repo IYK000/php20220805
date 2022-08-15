@@ -32,6 +32,10 @@
 	<title>HerokuTest</title>
 </head>
 <body>
-	<p>OTZ</p>
+	<form>
+		<p><span>ID:</span><input type="text" name="id"></p>
+		<p><span>PW:</span><input type="password" name="pw"></p>
+		<p><button type="submit">送信</button></p>
+	</form>
 </body>
 </html>
