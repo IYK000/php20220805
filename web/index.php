@@ -2,21 +2,21 @@
 	// 
 	require_once(dirname(__FILE__) . "/../common/db.php");
 
-	// try {
-	// 	$db = parse_url(DB_URL);
+	try {
+		$db = parse_url(DB_URL);
 
-	// 	$pdo = new PDO("pgsql:" . sprintf(
-	// 		"host=%s;port=%s;user=%s;password=%s;dbname=%s",
-	// 		$db["host"],
-	// 		$db["port"],
-	// 		$db["user"],
-	// 		$db["pass"],
-	// 		ltrim($db["path"], "/")
-	// ));
-	// } catch (PDOException $e) {
-	// 		$isConnect = false;
-	// 		$msg       = "DB接続に失敗しました。<br>(" . $e->getMessage() . ")";
-	// }
+		$pdo = new PDO("pgsql:" . sprintf(
+			"host=%s;port=%s;user=%s;password=%s;dbname=%s",
+			$db["host"],
+			$db["port"],
+			$db["user"],
+			$db["pass"],
+			ltrim($db["path"], "/")
+	));
+	} catch (PDOException $e) {
+			$isConnect = false;
+			$msg       = "DB接続に失敗しました。<br>(" . $e->getMessage() . ")";
+	}
  
 	// debug
 	echo '<pre>';
