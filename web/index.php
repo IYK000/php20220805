@@ -19,9 +19,9 @@
 	}
  
 	// debug
-	echo '<pre>';
-	echo var_dump(DB_URL);
-	echo '</pre>';
+	// echo '<pre>';
+	// echo var_dump(DB_URL);
+	// echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="jp">
