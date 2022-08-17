@@ -5,7 +5,7 @@
 	$MemberId = $_POST['MemberId'];
 	$LoginPassword = $_POST['LoginPassword'];
 
-	// $msg = '';
+	$msg = '';
 
 	// try {
 	// 	$db = new loginDb();
