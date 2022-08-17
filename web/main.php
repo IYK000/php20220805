@@ -20,7 +20,7 @@
  
 	// debug
 	echo '<pre>';
-	echo var_dump(dirname(__FILE__));
+	echo var_dump(dirname(__FILE__) . '/../class_db/loginDb.php');
 	echo '</pre>';
 ?>
 <!DOCTYPE html>
