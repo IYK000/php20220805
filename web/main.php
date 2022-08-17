@@ -1,6 +1,6 @@
 <?php
-	// 外部ファイル取込み
-	require_once(dirname(__FILE__) . '/../class_db/loginDb.php');
+	// // 外部ファイル取込み
+	// require_once(dirname(__FILE__) . '/../class_db/loginDb.php');
 
 	// $MemberId = $_POST['MemberId'];
 	// $LoginPassword = $_POST['LoginPassword'];
@@ -18,10 +18,10 @@
 
 	// $sh = hash('sha256', "Abcd1234");
  
-	// // debug
-	// echo '<pre>';
-	// echo var_dump($sh);
-	// echo '</pre>';
+	// debug
+	echo '<pre>';
+	echo var_dump(dirname(__FILE__));
+	echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="jp">
