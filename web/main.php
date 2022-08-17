@@ -2,18 +2,18 @@
 	// 外部ファイル取込み
 	require_once(dirname(__FILE__) . '/../class_db/loginDb.php');
 
-	$MemberId = $_POST['MemberId'];
-	$LoginPassword = $_POST['LoginPassword'];
+	// $MemberId = $_POST['MemberId'];
+	// $LoginPassword = $_POST['LoginPassword'];
 
-	$msg = '';
+	// $msg = '';
 
 	// try {
-		// $db = new loginDb();
+	// 	$db = new loginDb();
 
-		// $result = $db->loginCheck($MemberId, $LoginPassword);
+	// 	$result = $db->loginCheck($MemberId, $LoginPassword);
 		
 	// } catch (PDOException $e) {
-			$msg       = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
+	// 		$msg       = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
 	// }
 
 	// $sh = hash('sha256', "Abcd1234");
