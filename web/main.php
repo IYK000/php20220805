@@ -7,14 +7,14 @@
 
 	$msg = '';
 
-	// try {
+	try {
 	// 	$db = new loginDb();
 
 	// 	$result = $db->loginCheck($MemberId, $LoginPassword);
 		
-	// } catch (PDOException $e) {
-	// 		$msg       = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
-	// }
+	} catch (PDOException $e) {
+			$msg       = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
+	}
 
 	// $sh = hash('sha256', "Abcd1234");
  
@@ -32,7 +32,7 @@
 	<title>HerokuTest</title>
 </head>
 <body>
-	<p>Hello world!!</p>
+	<p>Hello world!</p>
 	<p><?=$msg;?></p>
 </body>
 </html>
