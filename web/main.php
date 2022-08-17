@@ -8,15 +8,15 @@
 	$msg = '';
 
 	try {
-		$db = new loginDb();
+		// $db = new loginDb();
 
-		$result = $db->loginCheck($MemberId, $LoginPassword);
+		// $result = $db->loginCheck($MemberId, $LoginPassword);
 		
 	} catch (PDOException $e) {
 			$msg       = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
 	}
 
-	// //$sh = hash('sha256', "Abcd1234");
+	$sh = hash('sha256', "Abcd1234");
  
 	// // debug
 	// echo '<pre>';
