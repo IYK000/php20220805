@@ -8,7 +8,7 @@
 	$msg = '';
 
 	try {
-	// 	$db = new loginDb();
+		$db = new loginDb();
 
 	// 	$result = $db->loginCheck($MemberId, $LoginPassword);
 		
