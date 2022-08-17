@@ -32,7 +32,7 @@
 	<title>HerokuTest</title>
 </head>
 <body>
-	<p>Hello world!</p>
+	<p>Hello world!!</p>
 	<p><?=$msg;?></p>
 </body>
 </html>
