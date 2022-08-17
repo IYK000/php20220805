@@ -1,29 +1,27 @@
 <?php
-	try {
-		$db = parse_url("postgres://eyencudwuyhxpn:caea2aebea0daf832a47e3de0df1d4d349fb39780918cbd946a8ddfb3ab25fdb@ec2-54-85-56-210.compute-1.amazonaws.com:5432/d28e45qo92r39c");
-		
+	// 外部ファイル取込み
+	require_once(dirname(__FILE__) . '/../class_db/loginDb.php');
 
-		$pdo = new PDO("pgsql:" . sprintf(
-			"host=%s;port=%s;user=%s;password=%s;dbname=%s",
-			$db["host"],
-			$db["port"],
-			$db["user"],
-			$db["pass"],
-			ltrim($db["path"], "/")
-	));
+	$MemberId = $_POST['MemberId'];
+	$LoginPassword = $_POST['LoginPassword'];
+
+	$msg = '';
+
+	try {
+		$db = new loginDb();
+
+		$result = $db->loginCheck($MemberId, $LoginPassword);
+		
 	} catch (PDOException $e) {
-			$isConnect = false;
-			$msg       = "DB接続に失敗しました。<br>(" . $e->getMessage() . ")";
+			$msg       = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
 	}
 
-	// SQL
-	$stmt = $pdo->query("UPDATE salesforce.account SET memo_all__c='メモ' WHERE id=1;");
-	$rs = $stmt->fetchall();
+	$sh = hash('sha256', "Abcd1234");
  
-	// // debug
-	// echo '<pre>';
-	// echo var_dump($rs);
-	// echo '</pre>';
+	// debug
+	echo '<pre>';
+	echo var_dump($sh);
+	echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="jp">
@@ -34,6 +32,6 @@
 	<title>HerokuTest</title>
 </head>
 <body>
-	<p>OTZ</p>
+	<p><?=$msg;?></p>
 </body>
 </html>

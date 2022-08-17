@@ -1,24 +1,5 @@
 <?php
-	// 
-	require_once(dirname(__FILE__) . "/../common/db.php");
-
-	try {
-		$db = parse_url(DB_URL);
-
-		$pdo = new PDO("pgsql:" . sprintf(
-			"host=%s;port=%s;user=%s;password=%s;dbname=%s",
-			$db["host"],
-			$db["port"],
-			$db["user"],
-			$db["pass"],
-			ltrim($db["path"], "/")
-	));
-	} catch (PDOException $e) {
-			$isConnect = false;
-			$msg       = "DB接続に失敗しました。<br>(" . $e->getMessage() . ")";
-	}
- 
-	// debug
+	// // debug
 	// echo '<pre>';
 	// echo var_dump(DB_URL);
 	// echo '</pre>';
@@ -32,9 +13,9 @@
 	<title>HerokuTest</title>
 </head>
 <body>
-	<form>
-		<p><span>ID:</span><input type="text" name="id"></p>
-		<p><span>PW:</span><input type="password" name="pw"></p>
+	<form action="./main.php" method="post">
+		<p><span>ID:</span><input type="text" name="MemberId"></p>
+		<p><span>PW:</span><input type="password" name="LoginPassword"></p>
 		<p><button type="submit">送信</button></p>
 	</form>
 </body>
