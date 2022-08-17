@@ -20,7 +20,7 @@
  
 	// debug
 	echo '<pre>';
-	echo var_dump(glob(dirname(__FILE__) . '/../class_db/*'));
+	echo var_dump(glob(dirname(__FILE__) . '/../*'));
 	echo '</pre>';
 ?>
 <!DOCTYPE html>
