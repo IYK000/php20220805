@@ -1,11 +1,11 @@
 <?php
-	// // 外部ファイル取込み
-	// require_once(dirname(__FILE__) . '/../class_db/loginDb.php');
+	// 外部ファイル取込み
+	require_once(dirname(__FILE__) . '/../class_db/loginDb.php');
 
-	// $MemberId = $_POST['MemberId'];
-	// $LoginPassword = $_POST['LoginPassword'];
+	$MemberId = $_POST['MemberId'];
+	$LoginPassword = $_POST['LoginPassword'];
 
-	// $msg = '';
+	$msg = '';
 
 	// try {
 	// 	$db = new loginDb();
