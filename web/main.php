@@ -16,7 +16,7 @@
 			$msg       = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
 	}
 
-	$sh = hash('sha256', "Abcd1234");
+	// $sh = hash('sha256', "Abcd1234");
  
 	// // debug
 	// echo '<pre>';
