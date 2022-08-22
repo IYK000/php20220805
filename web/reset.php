@@ -1,17 +1,15 @@
 <?php
 	// // 外部ファイル取込み
-	require_once(dirname(__FILE__) . '/../class_db/LoginDb.php');
+	require_once(dirname(__FILE__) . '/../class_db/ResetDb.php');
 
-	$MemberId = isset($_POST['MemberId']) ?  $_POST['MemberId'] : '';
-	$LoginPassword = isset($_POST['LoginPassword']) ?  $_POST['LoginPassword'] : '';
-	$LoginPassword = $sh = hash('sha256', $LoginPassword);
+	$url = isset($_GET['url']) ?  $_POST['MemberId'] : '';
 
 	$msg = '';
 
 	try {
-		$db = new loginDb();
+		$db = new ResetDb();
 
-		$result = $db->loginCheck($MemberId, $LoginPassword);
+		$result = $db->isUrl($url);
 		
 	} catch (PDOException $e) {
 			$msg       = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
