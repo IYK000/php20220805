@@ -1,5 +1,201 @@
+#main
+{
+    margin-bottom: 35px;
+}
+
 #main div table
 {
     margin-left:auto;
     margin-right:auto;
+}
+
+#index-head div:first-child
+{
+    width: 10px;
+    height: 50px;
+    background: linear-gradient( to top, white, crimson);
+}
+
+#index-head
+{
+    display: flex;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+#index-head h3
+{
+    margin: 0;
+}
+
+#index-head div:last-child
+{
+    margin-left: 5px;
+    width: 100%;
+}
+
+/* table */
+table[name="loginForm"] tr td:first-child
+{
+  padding: 5px;
+  background-color: silver;
+}
+
+table[name="loginForm"] tr td:first-child
+{
+  width: 40%;
+}
+
+table[name="loginForm"] tr td
+{
+  border: gray 1px solid;
+}
+
+table[name="loginForm"] tr td:nth-child(even) input
+{
+    margin: 5px;
+}
+
+table[name="loginForm"] tr:nth-child(even) td input
+{
+    width: 200px;
+}
+
+table[name="loginForm"] tr td:nth-child(odd)
+{
+    padding: 0 70px 0 50px;
+}
+
+table[name="loginForm"] tr td:nth-child(even)
+{
+    padding: 0 100px 0 0 ;
+}
+
+/* submit */
+.submit
+{
+    padding: 5px;
+}
+.submit input
+{
+    padding: 2px 8px 2px 8px;
+}
+
+
+/* alert */
+.alert-f-b
+{
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.alert-f-b
+{
+    border: 1px solid chocolate;
+    background-color: aliceblue;
+}
+
+.alert-f
+{
+    margin: -20px 7px 7px 7px;
+}
+
+.alert-f > div:first-child
+{
+    padding: 8px;
+    border: crimson 1px solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 300px;
+    margin-left: 25px;
+    margin-bottom: -1px;
+    background-color: crimson;
+    color: whitesmoke;
+}
+
+.alert-f div:last-child
+{
+    padding: 8px;
+    border: crimson 1px solid;
+
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.alert-f div:last-child div:last-child
+{
+    background-color: seashell;
+    box-shadow: 1px 1px;
+}
+.alert-f div:last-child div:last-child > h3
+{
+    margin: 10px 15px 0 15px;
+    color: crimson;
+    border-bottom: 2px dotted crimson;
+}
+
+.alert-f div:last-child div:last-child > h3::before
+{
+    font-size: 17px;
+    line-height: 1px;
+    width: 16px;
+    color: transparent;
+    content: 'btn';
+    background-image: url(../img/alert.png);
+    background-size: 24px;
+    background-repeat: no-repeat;
+}
+
+.alert-f div:last-child div:last-child ul
+{
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.alert-f div:last-child div:last-child ul li
+{
+    list-style: none;
+    font-size: 14px;
+
+    width: 500px;
+    margin: 0;
+    padding: 0;
+}
+
+.alert-f div:last-child div:last-child ul li::before
+{
+    font-size: 17px;
+    line-height: 1px;
+    width: 16px;
+    color: transparent;
+    content: 'btn';
+    background-image: url(../img/check.png);
+    background-size: 24px;
+    background-repeat: no-repeat;
+}
+
+
+
+
+.alert-f div:last-child > div:first-child
+{
+    margin: 5px 0 9px 9px;
+}
+.alert-f div:last-child > div:first-child > span
+{
+    color: red;
+}
+
+
+footer
+{
+    margin-top: 25px;
 }

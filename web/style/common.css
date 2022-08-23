@@ -1,3 +1,14 @@
+body
+{
+    width: 80%;
+    margin: 0 auto;
+}
+
+table
+{
+  border-collapse: collapse;
+}
+
 #wrap
 {
     width: 100%;
@@ -62,6 +73,14 @@ footer, .save-id-label, .lb-none
 {
     margin: 2rem 0 5px 0;
 }
+.m-td-2r
+{
+    margin: 5px 0 2rem 0;
+}
+.m-tc-1r
+{
+    margin: 1rem 0 1rem 0;
+}
 /* letter */
 .lk
 {
@@ -79,7 +98,7 @@ footer, .save-id-label, .lb-none
     width: 16px;
     color: transparent;
     content: 'btn';
-    background-image: url(/img/link-n.png);
+    background-image: url(../img/link-n.png);
     background-size: 15px;
     background-repeat: no-repeat;
 }
@@ -91,6 +110,15 @@ footer, .save-id-label, .lb-none
 .t-r
 {
     text-align: right;
+}
+.t-l
+{
+    text-align: left;
+}
+
+.f-lr
+{
+    font-size: 10px;
 }
 
 .f-l
@@ -116,6 +144,10 @@ footer, .save-id-label, .lb-none
 .fs-b
 {
     font-weight: bold;
+}
+.fs-t-w
+{
+    color: white;
 }
 
 /* display */

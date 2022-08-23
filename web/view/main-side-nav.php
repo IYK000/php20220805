@@ -86,7 +86,7 @@
 </div>
 
 <!-- ９メール -->
-<div class="f-l mail-b-m t-c">
+<div class="f-lr mail-b-m t-c fs-t-w">
     <div>E-mailによるお問い合わせ先</div>
     <a href="mailto:kim.chanho@fukutoku-g.co.jp">kim.chanho@fukutoku-g.co.jp</a>
 </div>
