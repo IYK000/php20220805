@@ -5,26 +5,24 @@
 	$MemberId = isset($_POST['MemberId']) ?  $_POST['MemberId'] : '';
 	$LoginPassword = isset($_POST['LoginPassword']) ?  $_POST['LoginPassword'] : '';
 
-	$msg = '';
+	$Msg = '';
 
 	try {
-		$db = new loginDb();
+		// ログインCheck
+		$Db = new loginDb();
+		$Result = $Db->loginCheck($MemberId, $LoginPassword);
 
-		$result = $db->loginCheck($MemberId, $LoginPassword);
-
-		if($result){
+		if($Result){
 			$DisplyType = 'OK';
 			// 画面遷移
 			header('Location: ./main.php');
+			exit;
 		} else {
 			$DisplyType = 'NG';
-			$msg = 'ユーザIDもしくはパスワードが違います。';
+			$Msg = 'ユーザIDもしくはパスワードが違います。';
 		}
-
-		
-		exit;
 	} catch (PDOException $e) {
-			$msg = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
+			$Msg = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
 	}
  
 	// // debug
