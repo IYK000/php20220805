@@ -12,7 +12,7 @@ class loginDb extends db
 
 		// 値をバインド
 		$stmt->bindValue(':MemberId', $MemberId);
-		$stmt->bindValue(':LoginPassword', $LoginPassword);
+		$stmt->bindValue(':LoginPassword',  hash('sha256', $LoginPassword));
 
 		// SQL実行
 		$stmt->execute();
