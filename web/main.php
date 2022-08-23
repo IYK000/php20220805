@@ -1,37 +1,41 @@
-<?php
-	// // 外部ファイル取込み
-	require_once(dirname(__FILE__) . '/../class_db/LoginDb.php');
-
-	$MemberId = isset($_POST['MemberId']) ?  $_POST['MemberId'] : '';
-	$LoginPassword = isset($_POST['LoginPassword']) ?  $_POST['LoginPassword'] : '';
-	$LoginPassword = $sh = hash('sha256', $LoginPassword);
-
-	$msg = '';
-
-	try {
-		$db = new loginDb();
-
-		$result = $db->loginCheck($MemberId, $LoginPassword);
-		
-	} catch (PDOException $e) {
-			$msg       = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
-	}
- 
-	// debug
-	echo '<pre>';
-	echo var_dump($result);
-	echo '</pre>';
-?>
-<!DOCTYPE html>
-<html lang="jp">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>HerokuTest</title>
-</head>
+<?php require_once('view/top.php') ?>
+      <link rel="stylesheet" type="text/css" href="style/main.css">
+      <title>ご利用状況</title>
+    </head>
 <body>
-	<p>Hello world!</p>
-	<p><?=$msg;?></p>
-</body>
-</html>
+
+<div id="wrap">
+    <?php require_once('view/header.php') ?>
+
+    <div>
+        <a target="_blank" href="https://www.yahoo.co.jp/">
+        <img src="img/main-banner.png" width="100%" height="100px" border="0"></a>
+    </div>
+    <div id="content" class="fx">
+        <div id="sidenav">
+            <?php require_once('view/main-side-nav.php') ?>
+        </div>
+
+        <div id="article">
+            <div class="fx fx-f-m fx-jc-sb">
+                <div class="fx fx-f-m">
+                    <div class="f-b fs-b p-r-1r">ご利用状況</div>
+                    <div class="fs-b">お客様の現在のサービス利用状況です。</div>
+                </div>
+                <div><a class="lk f-l" href="#"><span>ログイン画面へ</span></a></div>
+
+            </div>
+
+            <hr>
+
+            <?php require_once('view/main-container.php') ?>
+        </div>
+
+
+    </div>
+</div>
+<?php require_once('view/footer.php') ?>
+
+<script>
+<?php require_once('lib/gotoTop.js') ?>
+</script>
