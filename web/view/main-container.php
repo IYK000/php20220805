@@ -3,7 +3,7 @@
     <div class="m-container-h fs-b"><span>物件情報</span></div>
 
     <div>
-        <table name="buildingInformation">
+        <table class="t-tp1">
             <tr>
                 <td> 物件情報テストテキスト </td>
             </tr>
@@ -17,7 +17,7 @@
     <div class="m-container-h fs-b"><span>会員情報</span></div>
 
     <div>
-    <table name="memberInformation">
+    <table class="t-tp2">
         <tr>
             <td> 会員ID </td>
             <td> IDTEST </td>
@@ -45,7 +45,7 @@
     <div class="m-container-h fs-b"><span>メールサービス</span></div>
 
     <div>
-    <table name="mailService">
+    <table name="mailService" class="t-tp2">
         <tr>
             <td> メールアドレス </td>
             <td colspan="3"> abcd@testmail.com </td>
@@ -85,7 +85,7 @@
     <div class="m-container-h fs-b"><span>IP電話サービス</span></div>
 
     <div>
-    <table name="ipPhoneServices">
+    <table class="t-tp2">
         <tr>
             <td> ユーザID </td>
             <td> ID123456 </td>

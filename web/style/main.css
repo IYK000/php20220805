@@ -43,7 +43,6 @@
     width: 16px;
     color: transparent;
     content: 'btn';
-    background-image: url(../img/link-m.png);
     background-size: 20px;
     background-repeat: no-repeat;
   }
@@ -107,7 +106,6 @@
   width: 16px;
   color: transparent;
   content: 'btn';
-  background-image: url(../img/m-i-c-01.png);
   background-size: 20px;
   background-repeat: no-repeat;
 }
@@ -130,55 +128,7 @@
   width: 16px;
   color: transparent;
   content: 'bt';
-  background-image: url(../img/up-arrow.png);
   background-size: 12px;
   background-repeat: no-repeat;
 
-}
-
-
-/* main container table detail */
-
-/*  >>1 buildingInformation */
-
-
-table[name="buildingInformation"]
-{
-  border: gray 1px solid;
-  width: 100%;
-  background-color: silver;
-}
-table[name="buildingInformation"] tr td
-{
-  padding: 5px;
-}
-
-table[name="memberInformation"],
-table[name="mailService"],
-table[name="ipPhoneServices"]
-{
-  border: gray 1px solid;
-  width: 100%;
-}
-
-table[name="memberInformation"] tr td:first-child,
-table[name="mailService"] tr td:nth-child(odd),
-table[name="ipPhoneServices"] tr td:first-child
-{
-  padding: 5px;
-  background-color: silver;
-}
-
-table[name="memberInformation"] tr td:first-child,
-table[name="mailService"] tr td:first-child,
-table[name="ipPhoneServices"] tr td:first-child
-{
-  width: 40%;
-}
-
-table[name="memberInformation"] tr td,
-table[name="mailService"] tr td,
-table[name="ipPhoneServices"] tr td
-{
-  border: gray 1px solid;
 }

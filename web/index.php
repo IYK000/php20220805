@@ -7,7 +7,7 @@
         <?php require_once('view/header.php') ?>
 
         <div id="main">
-            <div id="index-head">
+            <div class="index-head">
                 <div></div>
                 <div class="t-l">
                     <h3>会員情報ログイン</h3>
@@ -40,7 +40,7 @@
             </div>
 
             <div class="submit">
-                <input type="submit" value="ログイン">
+                <input type="submit" class="btn-p" value="ログイン">
             </div>
 
 

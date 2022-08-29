@@ -1,3 +1,35 @@
+/* image */
+.lk::before
+{
+    background-image: url(/img/link-n.png);
+}
+.alert-f div:last-child div:last-child > h3::before
+{
+    background-image: url(/img/alert.png);
+}
+.alert-f div:last-child div:last-child ul li::before
+{
+    background-image: url(/img/check.png);
+}
+.lk-m-icon::before
+{
+    background-image: url(/img/link-m.png);
+}
+.m-container-h::before
+{
+  background-image: url(/img/m-i-c-01.png);
+}
+.i-i-Topbtn::before
+{
+  background-image: url(/img/up-arrow.png);
+}
+
+.required::before
+{
+    background-image: url(/img/required.png);
+}
+
+
 body
 {
     width: 80%;
@@ -63,6 +95,53 @@ footer, .save-id-label, .lb-none
 {
     cursor: pointer;
 }
+.btn-p
+{
+    padding: 2px 8px 2px 8px;
+}
+
+
+/* index head */
+.index-head > div:first-child
+{
+    width: 10px;
+    height: 50px;
+    background: linear-gradient( to top, white, crimson);
+}
+
+.index-head
+{
+    display: flex;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.index-head h3,
+.index-head h4,
+.m-d
+{
+    margin: 0;
+}
+
+.index-head > div:last-child
+{
+    margin-left: 5px;
+    width: 100%;
+}
+
+/* size */
+.w-60
+{
+    width: 60%;
+}
+.w-60-f
+{
+    width: 60% !important;
+}
+.w-80-f
+{
+    width: 80% !important;
+}
 
 /* term */
 .p-r-1r
@@ -81,10 +160,26 @@ footer, .save-id-label, .lb-none
 {
     margin: 1rem 0 1rem 0;
 }
+.m-bt-1r
+{
+    margin-bottom: 1rem;
+}
+.m-l-1r
+{
+    margin-left: 1rem;
+}
+.p-c-m
+{
+    margin: 0 auto;
+}
+
 /* letter */
-.lk
+a
 {
     color: red;
+}
+.lk
+{
     text-decoration: none;
 }
 .lk span
@@ -98,7 +193,6 @@ footer, .save-id-label, .lb-none
     width: 16px;
     color: transparent;
     content: 'btn';
-    background-image: url(../img/link-n.png);
     background-size: 15px;
     background-repeat: no-repeat;
 }
@@ -150,6 +244,11 @@ footer, .save-id-label, .lb-none
     color: white;
 }
 
+.vv-tt
+{
+    vertical-align: text-top;
+}
+
 /* display */
 .fx
 {
@@ -162,4 +261,70 @@ footer, .save-id-label, .lb-none
 .fx-jc-sb
 {
     justify-content: space-between;
+}
+
+
+/* link */
+.link-tree div:not( .link-tree div:last-child )::after
+{
+    content: ">";
+    margin: 0 1rem 0 1rem;
+}
+
+
+/* table */
+
+
+
+/* main container table detail */
+.t-tp1
+{
+  border: gray 1px solid;
+  width: 100%;
+  background-color: silver;
+}
+.t-tp1 tr td,
+.t-tp3 tr td
+{
+  padding: 5px;
+}
+
+.t-tp2,
+.t-tp3
+{
+  border: gray 1px solid;
+  width: 100%;
+}
+
+.t-tp2 tr td:first-child,
+table[name="mailService"] tr td:nth-child(odd)
+{
+  padding: 5px;
+  background-color: silver;
+}
+
+.t-tp2 tr td:first-child
+{
+  width: 40%;
+}
+
+.t-tp2 tr td,
+.t-tp3 tr td
+{
+  border: gray 1px solid;
+}
+
+.t-tp3 tr:first-child
+{
+    background-color: silver;
+}
+.t-tp2 tr:first-child td:last-child
+{
+    background-color: white;
+}
+
+.t-tp-n tr td
+{
+    border: 0;
+    background-color: white !important;
 }
