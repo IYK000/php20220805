@@ -1,3 +1,23 @@
+<?php
+    // 外部ファイル取込み
+	require_once(dirname(__FILE__) . '/../class_db/MainDb.php');
+
+    $MemberId = isset($_POST['MemberId']) ? $_POST['MemberId'] : 'test.user';
+
+    try {
+		// 会員情報取得
+		$Db = new MainDb();
+		$MemberInformation = $Db->getMemberInformation($MemberId);
+
+	} catch (PDOException $e) {
+			$Msg = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
+	}
+
+	// debug
+	// echo '<pre>';
+	// echo var_dump($MemberInformation);
+	// echo '</pre>';
+?>
 <?php require_once('view/top.php') ?>
       <link rel="stylesheet" type="text/css" href="style/main.css">
       <title>ご利用状況</title>

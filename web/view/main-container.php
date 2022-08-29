@@ -20,19 +20,19 @@
     <table class="t-tp2">
         <tr>
             <td> 会員ID </td>
-            <td> IDTEST </td>
+            <td> <?=$MemberInformation['memberid__c'];?> </td>
         </tr>
         <tr>
             <td> 氏名 </td>
-            <td> テスト　太郎 </td>
+            <td> <?=$MemberInformation['lastname'];?> <?=$MemberInformation['firstname'];?> </td>
         </tr>
         <tr>
             <td> フリガナ </td>
-            <td> てすと　たろう </td>
+            <td> <?=$MemberInformation['hurigana__c'];?> </td>
         </tr>
         <tr>
             <td> メールアドレス </td>
-            <td> abcd@testmail.com </td>
+            <td> <?=$MemberInformation['mailaddress__c'];?> </td>
         </tr>
     </table>
     </div>
