@@ -35,8 +35,8 @@
 
             <div class="f-l m-tc-1r">
                 <div><input type="checkbox" id="save-id"><label class="save-id-label" for="save-id">会員IDを保持する場合はチェックして下さい。（次回ログイン時に会員IDが自動で表示されます。）</label></div>
-                <div>会員IDを忘れた方はこちら <a href="#" class="lk"><span>会員IDの再発行</span></a></div>
-                <div>会員パスワードを忘れた方はこちら <a href="#" class="lk"><span>会員パスワードの再発行</span></a></div>
+                <div>会員IDを忘れた方はこちら <a href="./" class="lk"><span>会員IDの再発行</span></a></div>
+                <div>会員パスワードを忘れた方はこちら <a href="PasswordReset.php" class="lk"><span>会員パスワードの再発行</span></a></div>
             </div>
 
             <div class="submit">
