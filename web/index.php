@@ -24,11 +24,11 @@
             <form action="login.php" method="POST">
                     <tr>
                         <td>会員ID</td>
-                        <td><input type="text" name="username" placeholder="会員ID"><span>[半角]</span></td>
+                        <td><input type="text" name="MemberId" placeholder="会員ID"><span>[半角]</span></td>
                     </tr>
                     <tr>
                         <td>会員パスワード</td>
-                        <td><input type="password" name="password" placeholder="会員パスワード"><span>[半角]</span></td>
+                        <td><input type="password" name="LoginPassword" placeholder="会員パスワード"><span>[半角]</span></td>
                     </tr>
                 </table>
             </div>
