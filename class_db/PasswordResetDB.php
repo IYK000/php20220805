@@ -20,20 +20,18 @@ class PasswordResetDb extends db
 	}
 
 	// PWリセット
-	public function updatePassword($MemberId, $LoginPassword){
+	public function setResetUrl($MailAddress){
 		// SQL文
-		$sql = 'UPDATE salesforce.account SET LoginPassword__c=:LoginPassword, PwResetUrl__c=:PwResetUrl, PwResetDeadline__c=:PwResetDeadline WHERE MemberId__c=:MemberId;';
+		$sql = 'UPDATE salesforce.account SET PwResetUrl__c=:PwResetUrl, PwResetDeadline__c=:PwResetDeadline WHERE MailAddress__c=:MailAddress;';
 		$stmt = $this->pdo->prepare($sql);
 
 		// 値をバインド
-		$stmt->bindValue(':MemberId', $MemberId);
-		$stmt->bindValue(':LoginPassword', hash('sha256', $LoginPassword));
-		$stmt->bindValue(":PwResetUrl", null, PDO::PARAM_NULL);
-		$stmt->bindValue(":PwResetDeadline", null, PDO::PARAM_NULL);
+		$stmt->bindValue(":PwResetUrl", substr(str_shuffle(str_repeat('abcdefghijklmnopqrstuvwxyz0123456789', 10)), 0, 16));
+		$stmt->bindValue(":PwResetDeadline", date('Y-m-d', strtotime('+1 day')));
+		$stmt->bindValue(':MailAddress', $MailAddress);
 
 		// SQL実行
-		$stmt->execute();
-		return $stmt->fetch(PDO::FETCH_ASSOC);
+		return $stmt->execute();
 	}
 }
 ?>
