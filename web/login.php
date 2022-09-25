@@ -15,7 +15,7 @@
 		if($Result){
 			$DisplyType = 'OK';
 			// 画面遷移
-			//header('Location: ./main.php');
+			header('Location: ./main.php');
 			exit;
 		} else {
 			$DisplyType = 'NG';
