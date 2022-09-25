@@ -1,5 +1,4 @@
 <?php
-/*
 // 外部ファイル取込み
 	require_once(dirname(__FILE__) . '/../class_db/MainDb.php');
 
@@ -13,11 +12,10 @@
 	} catch (PDOException $e) {
 			$Msg = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
 	}
-*/
 	// debug
-	echo '<pre>';
-	echo var_dump(glob(dirname(__FILE__) . '/../class_db/*'));
-	echo '</pre>';
+	// echo '<pre>';
+	// echo var_dump(glob(dirname(__FILE__) . '/../class_db/*'));
+	// echo '</pre>';
 
 ?>
 <?php require_once('view/top.php') ?>

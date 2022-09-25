@@ -1,5 +1,4 @@
 <?php
-/*
 // 外部ファイル取込み
 require_once(dirname(__FILE__) . '/../common/db.php');
 
@@ -19,5 +18,4 @@ class MainDb extends db
 		return $stmt->fetch(PDO::FETCH_ASSOC);
 	}
 }
-*/
 ?>
