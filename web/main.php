@@ -12,12 +12,12 @@
 	} catch (PDOException $e) {
 			$Msg = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
 	}
-
-	// debug
-	// echo '<pre>';
-	// echo var_dump($MemberInformation);
-	// echo '</pre>';
 */
+	// debug
+	echo '<pre>';
+	echo var_dump(dirname(__FILE__) . '/../class_db/MainDb.php');
+	echo '</pre>';
+
 ?>
 <?php require_once('view/top.php') ?>
       <link rel="stylesheet" type="text/css" href="style/main.css">
