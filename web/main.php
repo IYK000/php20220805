@@ -1,7 +1,8 @@
 <?php
-    // 外部ファイル取込み
-	require_once(dirname(__FILE__) . '/../class_db/MainDb.php');
 /*
+// 外部ファイル取込み
+	require_once(dirname(__FILE__) . '/../class_db/MainDb.php');
+
     $MemberId = isset($_POST['MemberId']) ? $_POST['MemberId'] : 'test.user';
 
     try {
