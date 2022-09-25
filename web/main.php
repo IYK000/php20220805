@@ -16,7 +16,7 @@
 */
 	// debug
 	echo '<pre>';
-	echo var_dump(dirname(__FILE__) . '/../class_db/MainDb.php');
+	echo var_dump(file_exists(dirname(__FILE__) . '/../class_db/MainDb.php'));
 	echo '</pre>';
 
 ?>
