@@ -36,8 +36,8 @@
 			$_SESSION['session'] = $result['session'];
 
 			// 画面遷移
-//			header('Location: ./main.php');
-//			exit;
+			header('Location: ./main.php');
+			exit;
 		} else {
 			$disply_type = 'NG';
 			$msg = 'ユーザIDもしくはパスワードが違います。';
@@ -59,10 +59,10 @@
 		}
 	}
  
-	// debug
-	echo '<pre>';
-	echo var_dump ($result);
-	echo '</pre>';
+	// // debug
+	// echo '<pre>';
+	// echo var_dump ($result);
+	// echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="jp">
