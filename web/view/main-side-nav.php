@@ -5,9 +5,9 @@
 </div>
 
 <div class="m-side-c f-l">
-    <div>会員IDの追加</div>
-    <div>会員情報の変更</div>
-    <div>支払い情報の変更</div>
+    <div><a href="./pages/MemberInfo/AddMemID.php">会員IDの追加</a></div>
+    <div><a href="./pages/MemberInfo/CgeMemInfo.php">会員情報の変更</a></div>
+    <div><a href="./pages/MemberInfo/CgePaymentInfo.php">支払い情報の変更</a></div>
 </div>
 
 <!-- ２メールサービス -->
@@ -17,11 +17,11 @@
 </div>
 
 <div class="m-side-c f-l">
-    <div>メールアドレスの追加</div>
-    <div>メールに関する設定変更</div>
-    <div>メールパスワードの再発行</div>
-    <div>迷惑メールブロックサービスの申込・解約</div>
-    <div>迷惑メールブロックサービスの設定変更</div>
+    <div><a href="./pages/MailService/AddeAddress.php">メールアドレスの追加</a></div>
+    <div><a href="./pages/MailService/CgeEmailSettings.php">メールに関する設定変更</a></div>
+    <div><a href="./pages/MailService/EmailPWReissue.php">メールパスワードの再発行</a></div>
+    <div><a href="./pages/MailService/AppsSpamBlockService.php">迷惑メールブロックサービスの申込・解約</a></div>
+    <div><a href="./pages/MailService/CgeSettingsSBService.php">迷惑メールブロックサービスの設定変更</a></div>
 </div>
 
 <!-- ３スペースレンタルサービス -->
@@ -31,7 +31,7 @@
 </div>
 
 <div class="m-side-c f-l">
-    <div>スペースレンタルサービスの申込</div>
+    <div><a href="./pages/SpaceRentalSvs/ApplicationSpaceRentalSvs.php">スペースレンタルサービスの申込</a></div>
 </div>
 
 <!-- ４IP電話アダプタレンタルの申込・解約 -->
@@ -41,8 +41,8 @@
 </div>
 
 <div class="m-side-c f-l">
-    <div>IP電話アダプタレンタルの申込・解約</div>
-    <div>MSフォンの解約</div>
+    <div><a href="./pages/AppIPPHAdaperRental/AppIPPHAdaperRental.php">IP電話アダプタレンタルの申込・解約</a></div>
+    <div><a href="./pages/AppIPPHAdaperRental/CancelMSPhone.php">MSフォンの解約</a></div>
 </div>
 
 <!-- ５グローバルIPサービス -->
@@ -52,7 +52,7 @@
 </div>
 
 <div class="m-side-c f-l">
-    <div>申込・サービスタイプの変更・解約</div>
+    <div><a href="./pages/GlobalIPService/ChangeAppServiceType.php">申込・サービスタイプの変更・解約</a></div>
 </div>
 
 <!-- ６スグサポ -->
@@ -62,7 +62,7 @@
 </div>
 
 <div class="m-side-c f-l">
-    <div>スグサポ会員サービスの申込・解約</div>
+    <div><a href="./pages/SuguSupport/CgeSuguMemService.php">スグサポ会員サービスの申込・解約</a></div>
 </div>
 
 <!-- ７ウイルスバスター月額版 -->
@@ -72,7 +72,7 @@
 </div>
 
 <div class="m-side-c f-l">
-    <div>ウイルスバスター月額版サービスの申込</div>
+    <div><a href="./pages/AntivirusMonthlyVersion/AppforVBMonthlySvs.php">ウイルスバスター月額版サービスの申込</a></div>
 </div>
 
 <!-- ８有害サイトブロックサービス -->
@@ -82,7 +82,7 @@
 </div>
 
 <div class="m-side-c f-l">
-    <div>有害サイトブロックサービスの申込</div>
+    <div><a href="./pages/HarmfulSiteblockingSvs/BlockServiceApp.php">有害サイトブロックサービスの申込</a></div>
 </div>
 
 <!-- ９メール -->
@@ -93,5 +93,5 @@
 
 <!-- １０基本サイトの解約 -->
 <div class="m-side-c f-l">
-    <div>基本サイトの解約</div>
+    <div><a href="./pages/bind/TerminationBasicSite.php">基本サイトの解約</a></div>
 </div>
