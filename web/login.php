@@ -22,8 +22,7 @@
 
 
 		// ログインチェック結果
-//		if( preg_match('/^\d+\-\d+/',$result) != 1){
-		if(true){
+		if( preg_match('/^\d+\-\d+/',$result) != 1){
 			$disply_type = 'OK';
 
 			// セッション開始
