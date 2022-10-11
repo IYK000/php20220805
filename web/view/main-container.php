@@ -24,7 +24,7 @@
         </tr>
         <tr>
             <td> 氏名 </td>
-            <td> <?=$MemberInformation['lastname'];?> <?=$MemberInformation['firstname'];?> </td>
+            <td> <?=$MemberInformation['lastname'];?> <?=$MemberInformation['firstname'];?> <?=$MemberInformation['name'];?></td>
         </tr>
         <tr>
             <td> フリガナ </td>

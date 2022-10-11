@@ -1,34 +1,68 @@
 <?php
 	// // 外部ファイル取込み
+	require_once(dirname(__FILE__) . '/../common/config.php');
 	require_once(dirname(__FILE__) . '/../class_db/LoginDb.php');
 
-	$MemberId = isset($_POST['MemberId']) ?  $_POST['MemberId'] : '';
-	$LoginPassword = isset($_POST['LoginPassword']) ?  $_POST['LoginPassword'] : '';
+	$MemberId = filter_input(INPUT_POST, 'MemberId');
+	$LoginPassword = filter_input(INPUT_POST, 'LoginPassword');
 
 	$Msg = '';
 
 	try {
 		// ログインCheck
 		$Db = new loginDb();
-		$Result = $Db->loginCheck($MemberId, $LoginPassword);
+		switch(DEBUG){
+			case 99:
+				$result = '01234567890123456';
+				break;
+			default:
+				$result = $Db->loginCheck($MemberId, $LoginPassword);
+		}
 
-		if($Result){
-			$DisplyType = 'OK';
+
+
+		// ログインチェック結果
+//		if( preg_match('/^\d+\-\d+/',$result) != 1){
+		if(true){
+			$disply_type = 'OK';
+
+			// セッション開始
+			session_name('nttms-member-support');
+			session_start();
+			session_regenerate_id(TRUE);
+
+			// セッション設置
+			$_SESSION['user_id'] = $result['user_id'];
+			$_SESSION['session'] = $result['session'];
+
 			// 画面遷移
-			header('Location: ./main.php');
-			exit;
+//			header('Location: ./main.php');
+//			exit;
 		} else {
-			$DisplyType = 'NG';
-			$Msg = 'ユーザIDもしくはパスワードが違います。';
+			$disply_type = 'NG';
+			$msg = 'ユーザIDもしくはパスワードが違います。';
+			if(1 <= DEBUG){
+				$msg .= '（'.$result.'）';
+			}
 		}
 	} catch (PDOException $e) {
-			$Msg = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
+		$disply_type = 'NG';
+		$msg = '管理者にお問合せをお願いします。';
+		switch(DEBUG){
+			case 1:
+				$msg .= '（1-1）';
+				break;
+			case 99:
+				$msg .= $e->getMessage().' - '.$e->getLine().PHP_EOL;
+				break;
+			default:
+		}
 	}
  
-	// // debug
-	// echo '<pre>';
-	// echo var_dump($result);
-	// echo '</pre>';
+	// debug
+	echo '<pre>';
+	echo var_dump ($result);
+	echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="jp">
@@ -39,13 +73,13 @@
 	<title>HerokuTest</title>
 </head>
 <body>
-	<?php if($DisplyType == 'OK'){ ?>
+	<?php if($disply_type == 'OK'){ ?>
 		<p>ログインされました</p>
-	<?php } elseif($DisplyType == 'NG'){ ?>
-		<p><?=$Msg;?></p>
+	<?php } elseif($disply_type == 'NG'){ ?>
+		<p><?=$msg;?></p>
 		<a href="./">ログイン画面へ</a>
 	<?php } else { ?>
-		<p><?=$Msg;?></p>
+		<p><?=$msg;?></p>
 		<a href="./">ログイン画面へ</a>
 	<?php } ?>
 </body>

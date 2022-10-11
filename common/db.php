@@ -1,6 +1,6 @@
 <?php
 	// 定数
-	define("DB_URL", "postgres://zzlpnqcuxuugfz:f81d23261a0d49fcc7dcd1e84d32643f8042b0693a21fe718156cf90e3d0bb42@ec2-18-208-55-135.compute-1.amazonaws.com:5432/d46tm6b9iumf7g");
+	define("DB_URL", "postgres://qdklbbipcfznxe:63aa78d794a3a76816316a89750ce17c82c2fa566b9421318ca9f941936d4a3d@ec2-52-4-87-74.compute-1.amazonaws.com:5432/dfg4l71a9p8ql4");
 
 	class Db
 	{
