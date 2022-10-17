@@ -1,18 +1,5 @@
-#container
-{
-    margin: 1rem 0 3rem 0;
-}
 
-.required::before
-{
-    font-size: 11px;
-    line-height: 1px;
-    width: 16px;
-    color: transparent;
-    content: 'btn';
-    background-size: 15px;
-    background-repeat: no-repeat;
-}
+
 
 #container .t-tp2 tr td:first-child div:not(.required)
 {
@@ -27,4 +14,13 @@
 .t-tp3 p
 {
     margin: 0%;
+}
+
+#private-box{
+    border: 1px solid gray;
+    border-radius: 7px;
+    box-shadow: 1px 2px;
+    padding: 13px;
+    background: antiquewhite;
+    margin: 23px 13%;
 }

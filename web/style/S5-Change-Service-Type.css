@@ -1,0 +1,21 @@
+table tr td{
+    padding: 2px;
+}
+
+table{
+    border-collapse: separate;
+}
+
+table tr td:first-child:not(table tr:first-child td:first-child){
+    width: 21%;
+    background: silver;
+}
+
+table tr:first-child td:not(table tr:first-child td:first-child){
+    background-color :darkviolet;
+    color: aliceblue;
+}
+
+.eye-catch-bar{
+    border: 1px solid black;
+}

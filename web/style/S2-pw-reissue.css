@@ -1,0 +1,7 @@
+
+.t-tp3{
+    width: 55vw;
+    margin: 0 auto;
+}
+
+.t-tp3 tr td:last-child{ width: 40%; }

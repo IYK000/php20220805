@@ -5,7 +5,7 @@
         <div class="m-tc-1r required">のついた内容は必須項目になります。必ず入力してください。</div>
     </div>
 
-    <div>        <input type="submit" class="btn-p" id="submit" value="次へ">
+    <div>        
         <table class="t-tp2">
             <tr>
                 <td> <div class="required">姓</div> </td>
@@ -187,7 +187,12 @@
     </div>
 
     <div>
+        <div id="private-box">本サイトで入力いただいた個人情報は、<a href="">プライバシーポリシー</a>にもとづく利用目的において、適切にお取り扱いさせていただきます。</div>
+        <div class="t-c m-bt-1r">この内容で登録してよろしいでしょうか？</div>
+    </div>
 
-        <input type="button" class="btn-p" value="戻る">
+    <div class="t-c fx fx-jc-se">
+        <input type="submit" class="btn-p btn-p-b" id="submit" value="次へ">
+        <input type="button" class="btn-p btn-p-b" value="戻る">
     </div>
 </div>

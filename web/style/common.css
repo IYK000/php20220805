@@ -1,32 +1,32 @@
 /* image */
 .lk::before
 {
-    background-image: url(/img/link-n.png);
+    background-image: url(../img/link-n.png);
 }
 .alert-f div:last-child div:last-child > h3::before
 {
-    background-image: url(/img/alert.png);
+    background-image: url(../img/alert.png);
 }
 .alert-f div:last-child div:last-child ul li::before
 {
-    background-image: url(/img/check.png);
+    background-image: url(../img/check.png);
 }
 .lk-m-icon::before
 {
-    background-image: url(/img/link-m.png);
+    background-image: url(../img/link-m.png);
 }
 .m-container-h::before
 {
-  background-image: url(/img/m-i-c-01.png);
+  background-image: url(../img/m-i-c-01.png);
 }
 .i-i-Topbtn::before
 {
-  background-image: url(/img/up-arrow.png);
+  background-image: url(../img/up-arrow.png);
 }
 
 .required::before
 {
-    background-image: url(/img/required.png);
+    background-image: url(../img/required.png);
 }
 
 
@@ -99,6 +99,13 @@ footer, .save-id-label, .lb-none
 {
     padding: 2px 8px 2px 8px;
 }
+.btn-p-b
+{
+    padding: 3px 40px;
+}
+.btn-p-b-fxx{
+    width:180px;
+}
 
 
 /* index head */
@@ -130,6 +137,12 @@ footer, .save-id-label, .lb-none
 }
 
 /* size */
+.w-15{
+    width: 15%;
+}
+.w-17{
+    width: 17%;
+}
 .w-60
 {
     width: 60%;
@@ -141,6 +154,13 @@ footer, .save-id-label, .lb-none
 .w-80-f
 {
     width: 80% !important;
+}
+.w-80{
+    width:80%;
+}
+.w-jf
+{
+    width: fit-content;
 }
 
 /* term */
@@ -168,15 +188,39 @@ footer, .save-id-label, .lb-none
 {
     margin-left: 1rem;
 }
+.m-upper-n{
+    margin-top: 0;
+}
 .p-c-m
 {
     margin: 0 auto;
 }
 
 /* letter */
-a
+.wl-bk{
+    text-decoration: underline;
+}
+
+.list-none{
+    list-style-type: none;
+}
+
+.list-s-num{
+    list-style-type: decimal;
+}
+.list-div{
+    margin-left: 1em;
+}
+.list-div-e2{
+    margin-left: 3em;
+}
+
+a, .wl
 {
     color: red;
+}
+.fgray{
+    color: gray;
 }
 .lk
 {
@@ -249,6 +293,10 @@ a
     vertical-align: text-top;
 }
 
+.m-inl{
+    margin-left: 2vw;
+}
+
 /* display */
 .fx
 {
@@ -261,6 +309,10 @@ a
 .fx-jc-sb
 {
     justify-content: space-between;
+}
+.fx-jc-se
+{
+    justify-content: space-evenly;
 }
 
 
@@ -327,4 +379,62 @@ table[name="mailService"] tr td:nth-child(odd)
 {
     border: 0;
     background-color: white !important;
+}
+
+.t-tp4{
+    width: 75vw;
+}
+.t-tp4 tr td{ padding: 5px; }
+.t-tp4 tr td:last-child{ text-align: center; }
+.t-tp4 tr{ border: 1px solid silver; }
+
+/* page style */
+#container
+{
+    margin: 1rem 0 3rem 0;
+}
+
+/* item */
+.required::before
+{
+    font-size: 11px;
+    line-height: 1px;
+    width: 16px;
+    color: transparent;
+    content: 'btn';
+    background-size: 15px;
+    background-repeat: no-repeat;
+}
+.sec-chk{
+    margin: 2vh 0;
+}
+.sec-chk label{
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.check-box
+{
+    border: 1px solid gray;
+    border-radius: 7px;
+    box-shadow: 1px 2px;
+    padding: 13px;
+    background: antiquewhite;
+    margin: 23px 13%;
+}
+.status-bar{
+    border: 2px solid silver;
+    padding: 5px;
+}
+.eye-catch-bar{
+    border: 1px solid silver;
+    padding: 15px;
+}
+
+
+/* border */
+.bd-df
+{
+    border: 1px solid black;
 }
