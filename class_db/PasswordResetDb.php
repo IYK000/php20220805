@@ -26,7 +26,7 @@ class PasswordResetDb extends db
 		$stmt = $this->pdo->prepare($sql);
 
 		// 値をバインド
-		$stmt->bindValue(":PwResetUrl", substr(str_shuffle(str_repeat('abcdefghijklmnopqrstuvwxyz0123456789', 10)), 0, 16));
+		$stmt->bindValue(":PwResetUrl", substr(str_shuffle(str_repeat('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', 10)), 0, 16));
 		$stmt->bindValue(":PwResetDeadline", date('Y-m-d', strtotime('+1 day')));
 		$stmt->bindValue(':MailAddress', $MailAddress);
 

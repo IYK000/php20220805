@@ -1,20 +1,21 @@
 <?php
 // 外部ファイル取込み
+	require_once(dirname(__FILE__) . '/../common/config.php');
+	require_once(dirname(__FILE__) . '/../common/SessionCheck.php');
 	require_once(dirname(__FILE__) . '/../class_db/MainDb.php');
-
-    $MemberId = isset($_POST['MemberId']) ? $_POST['MemberId'] : 'test.user';
 
     try {
 		// 会員情報取得
 		$Db = new MainDb();
-		$MemberInformation = $Db->getMemberInformation($MemberId);
+		$MemberInformation = $Db->getMemberInformation($_SESSION['user_id'], $_SESSION['session']);
 
 	} catch (PDOException $e) {
 			$Msg = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
 	}
-	// debug
+
+	// // debug
 	// echo '<pre>';
-	// echo var_dump(glob(dirname(__FILE__) . '/../class_db/*'));
+	// echo var_dump($MemberInformation);
 	// echo '</pre>';
 
 ?>
