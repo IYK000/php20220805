@@ -22,7 +22,7 @@
 
 
 		// ログインチェック結果
-		if( preg_match('/^\d+\-\d+/',$result) != 1){
+		if( array_key_exists('error', $result) == FALSE ){
 			$disply_type = 'OK';
 
 			// セッション開始
@@ -35,13 +35,13 @@
 			$_SESSION['session'] = $result['session'];
 
 			// 画面遷移
-			header('Location: ./main.php');
+//			header('Location: ./main.php');
 			exit;
 		} else {
 			$disply_type = 'NG';
 			$msg = 'ユーザIDもしくはパスワードが違います。';
 			if(1 <= DEBUG){
-				$msg .= '（'.$result.'）';
+				$msg .= '（'.$result['error'].'）';
 			}
 		}
 	} catch (PDOException $e) {
@@ -58,10 +58,10 @@
 		}
 	}
  
-	// // debug
-	// echo '<pre>';
-	// echo var_dump ($result);
-	// echo '</pre>';
+	// debug
+	echo '<pre>';
+	echo var_dump ($result);
+	echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="jp">

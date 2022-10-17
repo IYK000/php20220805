@@ -17,7 +17,7 @@ class loginDb extends db
 	/************************************************/
 	public function loginCheck($MemberId, $LoginPassword){
 		// SQL文
-		$sql = 'SELECT MemberId__c FROM salesforce.account WHERE MemberId__c=:MemberId AND LoginPassword__c=:LoginPassword;';
+		$sql = 'SELECT MemberId__c, LoginPassword,LoginPasswordEncryption__c FROM salesforce.account WHERE MemberId__c=:MemberId AND LoginPassword__c=:LoginPassword;';
 		$stmt = $this->pdo->prepare($sql);
 
 		// 値をバインド
@@ -28,7 +28,16 @@ class loginDb extends db
 		$stmt->execute();
 
 		// 対象があればセッションを保存
-		$return = '';
+		$return = array();
+
+$r =  $stmt->fetch(PDO::FETCH_ASSOC);
+$return['LoginPasswordEncryption__c'] = $r['LoginPasswordEncryption__c'];
+$return['MemberId__c'] = $r['MemberId__c'];
+$return['LoginPassword'] = $r['LoginPassword'];
+$return['MemberId'] = $MemberId;
+$return['LoginPassword'] = hash('sha256', $LoginPassword);
+
+
 		if( $stmt->fetch(PDO::FETCH_ASSOC) ){
 			// ランダムセッション値生成
 			$session = substr(str_shuffle(str_repeat('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', 10)), 0, 16);
@@ -41,22 +50,20 @@ class loginDb extends db
 
 			// 保存成功出来なかった場合
 			if( $update_return == FALSE){
-				$return = '2-2';
+				$return['error'] = '2-2';
 				if(DEBUG == 99){
-					$return .= 'セッションの保存に失敗しました。';
+					$return['error'] .= 'セッションの保存に失敗しました。';
 				}
 			} else {
 				$return = array(
 					'user_id' => $MemberId,
 					'session' => $session
 				);
-
-				$return = $r;
 			}
 		} else {
-			$return = '2-1';
+			$return['error'] = '2-1';
 			if(DEBUG == 99){
-				$return .= 'ログインとPWが一致しませんでした';
+				$return['error'] .= 'ログインとPWが一致しませんでした';
 			}
 		}
 
