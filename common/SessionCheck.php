@@ -11,25 +11,27 @@
 	// session確認用クラス生成
 	$Db = new SessionCheckDb();
 
-	// session有無
-	if( isset($_SESSION['session']) ){
-		if($Db->isSession( $_SESSION['session'] )){
-			// 新しいセッション値用ハッシュ値を設定
-			$_SESSION['session'] = $Db->setSession( $_SESSION['session'] );
-		} else if(DEBUG == 99) {
-			// 新しいセッション値用ハッシュ値を設定
-			$_SESSION['session'] = $Db->setSession( '01234567890123456' );
-		} else {
+	if(DEBUG != 99){
+		// session有無
+		if( isset($_SESSION['session']) ){
+			if($Db->isSession( $_SESSION['session'] )){
+				// 新しいセッション値用ハッシュ値を設定
+				$_SESSION['session'] = $Db->setSession( $_SESSION['session'] );
+			} else if(DEBUG == 99) {
+				// 新しいセッション値用ハッシュ値を設定
+				$_SESSION['session'] = $Db->setSession( '01234567890123456' );
+			} else {
+				// ログイン画面に遷移
+				header('Location: ./index.php');
+			}
+		}else {
 			// ログイン画面に遷移
-			header('Location: ./index.php');
+	//		header('Location: ./index.php');
 		}
-	}else {
-		// ログイン画面に遷移
-//		header('Location: ./index.php');
 	}
 
-	// debug
-	echo '<pre>';
-	echo var_dump( $_SESSION['session'] );
-	echo '</pre>';
+	// // debug
+	// echo '<pre>';
+	// echo var_dump( $_SESSION['session'] );
+	// echo '</pre>';
 ?>

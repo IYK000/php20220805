@@ -7,36 +7,33 @@ class loginDb extends db
 {
 	/************************************************/
 	/* [argument]									*/
-	/*	String $MemberId:ログインID 				*/
-	/*	String $LoginPassword:ログインパスワード	*/
+	/*	String $MemberID:ログインID 				*/
+	/*	String $MemberPASS:ログインパスワード	*/
 	/* [eturn value] 								*/
 	/*	String return:								*/
 	/*		成功時は自動生成されたセッション値　	*/
 	/*		1-1：ID・PWが合わない				　	*/
 	/*		1-2：セッション値の保存失敗　			*/
 	/************************************************/
-	public function loginCheck($MemberId, $LoginPassword){
+	public function loginCheck($MemberID, $MemberPASS){
 		// SQL文
-		$sql = 'SELECT MemberId__c, LoginPassword,LoginPasswordEncryption__c FROM salesforce.account WHERE MemberId__c=:MemberId AND LoginPassword__c=:LoginPassword;';
+//		$sql = 'SELECT MemberID__c, MemberPASS__c, LoginPasswordEncryption__c FROM salesforce.RentalAgreement__c WHERE MemberID__c=:MemberID AND MemberPASS__c=:MemberPASS;';
+		$sql = 'SELECT MemberID__c, MemberPASS__c FROM salesforce.RentalAgreement__c WHERE salesforce.MemberID=:MemberID AND MemberPASS__c=:MemberPASS;';
+$sql = 'SELECT * FROM salesforce.RentalAgreement__c WHERE MemberID__c=:MemberID;';
 		$stmt = $this->pdo->prepare($sql);
 
 		// 値をバインド
-		$stmt->bindValue(':MemberId', $MemberId);
-		$stmt->bindValue(':LoginPassword',  hash('sha256', $LoginPassword));
+		$stmt->bindValue(':MemberID', $MemberID);
+		// $stmt->bindValue(':MemberPASS',  hash('sha256', $MemberPASS));
 
 		// SQL実行
 		$stmt->execute();
 
 		// 対象があればセッションを保存
 		$return = array();
-
-$r =  $stmt->fetch(PDO::FETCH_ASSOC);
-$return['LoginPasswordEncryption__c'] = $r['LoginPasswordEncryption__c'];
-$return['MemberId__c'] = $r['MemberId__c'];
-$return['LoginPassword'] = $r['LoginPassword'];
-$return['MemberId'] = $MemberId;
-$return['LoginPassword'] = hash('sha256', $LoginPassword);
-
+		echo '<pre>';
+		var_dump($stmt->fetch(PDO::FETCH_ASSOC));
+		echo '</pre>';
 
 		if( $stmt->fetch(PDO::FETCH_ASSOC) ){
 			// ランダムセッション値生成

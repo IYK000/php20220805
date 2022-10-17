@@ -2,7 +2,7 @@
 	// const DEBUG = 0 // デバッグ無し
 	// const DEBUG = 1 // エラー値表示
 	// const DEBUG = 99 // 開発用 
-	const DEBUG = 1;
+	const DEBUG = 99;
 
 	// セッション設定
 	session_set_cookie_params(
