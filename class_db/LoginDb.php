@@ -17,31 +17,26 @@ class loginDb extends db
 	/************************************************/
 	public function loginCheck($MemberID, $MemberPASS){
 		// SQL文
-//		$sql = 'SELECT MemberID__c, MemberPASS__c, LoginPasswordEncryption__c FROM salesforce.RentalAgreement__c WHERE MemberID__c=:MemberID AND MemberPASS__c=:MemberPASS;';
-		$sql = 'SELECT MemberID__c, MemberPASS__c FROM salesforce.RentalAgreement__c WHERE salesforce.MemberID=:MemberID AND MemberPASS__c=:MemberPASS;';
-$sql = 'SELECT * FROM salesforce.RentalAgreement__c WHERE MemberID__c=:MemberID;';
+		$sql = 'SELECT MemberID__c, MemberPASS__c FROM salesforce.RentalAgreement__c WHERE MemberID__c=:MemberID AND MemberPASS__c=:MemberPASS;';
 		$stmt = $this->pdo->prepare($sql);
 
 		// 値をバインド
 		$stmt->bindValue(':MemberID', $MemberID);
-		// $stmt->bindValue(':MemberPASS',  hash('sha256', $MemberPASS));
+		$stmt->bindValue(':MemberPASS',  hash('sha256', $MemberPASS));
 
 		// SQL実行
 		$stmt->execute();
 
 		// 対象があればセッションを保存
 		$return = array();
-		echo '<pre>';
-		var_dump($stmt->fetch(PDO::FETCH_ASSOC));
-		echo '</pre>';
 
 		if( $stmt->fetch(PDO::FETCH_ASSOC) ){
 			// ランダムセッション値生成
 			$session = substr(str_shuffle(str_repeat('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', 10)), 0, 16);
 			// セッション値を保存
-			$sql = 'UPDATE salesforce.account SET Session__c=:session WHERE MemberId__c=:MemberId';
+			$sql = 'UPDATE salesforce.RentalAgreement__c SET Session__c=:session WHERE MemberID__c=:MemberID';
 			$stmt = $this->pdo->prepare($sql);
-			$stmt->bindValue(':MemberId', $MemberId);
+			$stmt->bindValue(':MemberID', $MemberID);
 			$stmt->bindValue(':session', $session);
 			$update_return = $stmt->execute();
 
@@ -53,7 +48,7 @@ $sql = 'SELECT * FROM salesforce.RentalAgreement__c WHERE MemberID__c=:MemberID;
 				}
 			} else {
 				$return = array(
-					'user_id' => $MemberId,
+					'user_id' => $MemberID,
 					'session' => $session
 				);
 			}

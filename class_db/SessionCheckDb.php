@@ -14,7 +14,7 @@ class SessionCheckDb extends db
 	/****************************************************/
 	public function isSession($session){
 		// SQL文
-		$sql = 'SELECT count(Session__c ) FROM salesforce.account WHERE Session__c=:session;';
+		$sql = 'SELECT count(Session__c ) FROM salesforce.RentalAgreement__c WHERE Session__c=:session;';
 		$stmt = $this->pdo->prepare($sql);
 
 		// 値をバインド
@@ -39,7 +39,7 @@ class SessionCheckDb extends db
 		// ランダムセッション値生成
 		$session_new = substr(str_shuffle(str_repeat('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', 10)), 0, 16);
 		// セッション値を保存
-		$sql = 'UPDATE salesforce.account SET Session__c=:session_new WHERE Session__c=:session_old';
+		$sql = 'UPDATE salesforce.RentalAgreement__c SET Session__c=:session_new WHERE Session__c=:session_old';
 		$stmt = $this->pdo->prepare($sql);
 		$stmt->bindValue(':session_new', $session_new);
 		$stmt->bindValue(':session_old', $session_old);
