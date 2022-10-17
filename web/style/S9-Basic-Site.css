@@ -1,0 +1,46 @@
+.t-tp3 tr td{
+    border: 0;
+}
+.t-tp3 tr:first-child td:first-child{
+    vertical-align: middle;
+}
+.t-tp2 tr td:first-child{
+    width: 25%;
+}
+
+.t-tp2 table tr td{
+    border: 0;
+    background-color: transparent !important;
+}
+
+.t-tp2 table tr td:first-child {
+    width: 20%;
+}
+
+.t-m-1{
+    margin-top: -1px;
+}
+
+.t-tp1 tr td:not(.t-tp1 tr:first-child td){
+    background: white !important;
+}
+.t-tp1 tr td:first-child{
+    width: 35%;
+}
+
+.t-tp1 tr td > div {
+    border-bottom: 1px solid gray;
+}
+
+.col-flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.fg{
+    flex-grow: 0.4;
+}
+.fgx{
+    width:20vw;
+}

@@ -6,8 +6,8 @@
 
 <div class="m-side-c f-l">
     <div><a href="./pages/MemberInfo/AddMemID.php">会員IDの追加</a></div>
-    <div><a href="./pages/MemberInfo/CgeMemInfo.php">会員情報の変更</a></div>
-    <div><a href="./pages/MemberInfo/CgePaymentInfo.php">支払い情報の変更</a></div>
+    <div><a href="./pages/MemberInfo/ChangeMemInfo.php">会員情報の変更</a></div>
+    <div><a href="./pages/MemberInfo/ChangePaymentInfo.php">支払い情報の変更</a></div>
 </div>
 
 <!-- ２メールサービス -->
@@ -18,7 +18,7 @@
 
 <div class="m-side-c f-l">
     <div><a href="./pages/MailService/AddeAddress.php">メールアドレスの追加</a></div>
-    <div><a href="./pages/MailService/CgeEmailSettings.php">メールに関する設定変更</a></div>
+    <div><a href="./pages/MailService/ChangemSettings.php">メールに関する設定変更</a></div>
     <div><a href="./pages/MailService/EmailPWReissue.php">メールパスワードの再発行</a></div>
     <div><a href="./pages/MailService/AppsSpamBlockService.php">迷惑メールブロックサービスの申込・解約</a></div>
     <div><a href="./pages/MailService/CgeSettingsSBService.php">迷惑メールブロックサービスの設定変更</a></div>
