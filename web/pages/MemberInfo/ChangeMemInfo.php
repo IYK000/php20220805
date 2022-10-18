@@ -1,3 +1,29 @@
+<?php
+// 外部ファイル取込み
+	require_once(dirname(__FILE__) . '/../../../common/config.php');
+	require_once(dirname(__FILE__) . '/../../../common/SessionCheck.php');
+	require_once(dirname(__FILE__) . '/../../../class_db/ChangeMemInfoDb.php');
+
+	try {
+		$Db = new ChangeMemInfoDb();
+		
+		// 会員情報取得
+		$MemberInformation = $Db->getMemberInformation($_SESSION['user_id'], $_SESSION['session']);
+
+    
+		// 会員情報（子供）取得
+		$MembeChilledrList = $Db->getMembeChilledrInformation($MemberInformation['sfid']);
+
+	} catch (PDOException $e) {
+			$Msg = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
+	}
+
+	// // debug
+	// echo '<pre>';
+	// echo var_dump($MemberInformation);
+	// echo '</pre>';
+
+?>
 <?php require_once('../../view/top.php') ?>
       <title>会員情報の変更</title>
     </head>

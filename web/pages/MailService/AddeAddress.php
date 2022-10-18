@@ -10,9 +10,8 @@
 		// 会員情報取得
 		$MemberName = $Db->getMemberName($_SESSION['user_id'], $_SESSION['session']);
 
-    
 		// 会員情報（子供）取得
-		$MembeChildNameList = $Db->getMembeChildNameList($MemberInformation['sfid']);
+		$MembeChildNameList = $Db->getMembeChildNameList($MemberName['sfid']);
 
 	} catch (PDOException $e) {
     $Msg = 'エラー';
