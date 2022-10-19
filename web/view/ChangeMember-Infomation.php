@@ -19,10 +19,16 @@
             </tr>
             <tr>
                 <td class="t-c"><button class="btn-p">変更</button></td>
-                <td></td>
-                <td></td>
+                <td><?=$MemberInformation['memberid__c']?></td>
+                <td><?=$MemberInformation['lastname']?> <?=$MemberInformation['firstname']?></td>
             </tr>
-
+            <?php foreach($MembeChilledrList as $MembeChilledrInformation){ ?>
+            <tr>
+                <td class="t-c"><button class="btn-p">変更</button></td>
+                <td><?=$MembeChilledrInformation['memberid__c']?></td>
+                <td><?=$MembeChilledrInformation['lastname']?> <?=$MembeChilledrInformation['firstname']?></td>
+            </tr>
+            <?php } ?>
         </table>
     </div>
 

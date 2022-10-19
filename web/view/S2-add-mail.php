@@ -12,7 +12,10 @@
                 <td>
                     既に登録済みの会員が利用する場合
                     <select class="m-l-1r">
-                        <option>TEST</option>
+                        <option><?=$MemberName['lastname']?> <?=$MemberName['firstname']?></option>
+                        <?php foreach($MembeChildNameList as $MembeChildName){?>
+                        <option><?=$MembeChildName['lastname']?> <?=$MembeChildName['firstname']?></option>
+                        <?php } ?>
                     </select>
                 </td>
                 <td><button class="btn-p-b">次　へ</button></td>

@@ -35,7 +35,7 @@
 			$_SESSION['session'] = $result['session'];
 
 			// 画面遷移
-//			header('Location: ./main.php');
+			header('Location: ./main.php');
 			exit;
 		} else {
 			$disply_type = 'NG';
@@ -58,10 +58,10 @@
 		}
 	}
  
-	// debug
-	echo '<pre>';
-	echo var_dump ($result);
-	echo '</pre>';
+	// // debug
+	// echo '<pre>';
+	// echo var_dump ($result);
+	// echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="jp">

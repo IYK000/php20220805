@@ -4,10 +4,15 @@
 	require_once(dirname(__FILE__) . '/../common/SessionCheck.php');
 	require_once(dirname(__FILE__) . '/../class_db/MainDb.php');
 
-    try {
-		// 会員情報取得
+	try {
 		$Db = new MainDb();
+		
+		// 物件情報取得
+		$PropertyInfomation = $Db->getPropertyInformation($_SESSION['user_id'], $_SESSION['session']);
+		// 会員情報取得
 		$MemberInformation = $Db->getMemberInformation($_SESSION['user_id'], $_SESSION['session']);
+		//　メールサービス情報取得
+        $MailserviceList =$Db->getMailserviceList($_SESSION['user_id'], $_SESSION['session']);
 
 	} catch (PDOException $e) {
 			$Msg = 'DB接続に失敗しました。<br>('.$e->getMessage().')';
@@ -15,7 +20,7 @@
 
 	// // debug
 	// echo '<pre>';
-	// echo var_dump($MemberInformation);
+	// echo var_dump($MailserviceList);
 	// echo '</pre>';
 
 ?>
