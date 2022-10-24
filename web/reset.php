@@ -31,10 +31,10 @@
 		$Msg = 'URLが正しく無いか期限切れとなっております。(2)';
 	}
 
-	// // debug
-	// echo '<pre>';
-	// echo var_dump($Result);
-	// echo '</pre>';
+	// debug
+	echo '<pre>';
+	echo var_dump($MemberId);
+	echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="jp">

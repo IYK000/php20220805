@@ -8,7 +8,7 @@ class ResetDb extends db
 	// リセット可能かチェック
 	public function isUrl($Url){
 		// SQL文
-		$sql = 'SELECT MemberId__c FROM salesforce.account WHERE PwResetUrl__c=:PwResetUrl AND :PwResetDeadline<=PwResetDeadline__c;';
+		$sql = 'SELECT MemberId__c FROM salesforce.RentalAgreement__c WHERE PwResetUrl__c=:PwResetUrl AND :PwResetDeadline<=PwResetDeadline__c;';
 		$stmt = $this->pdo->prepare($sql);
 
 		// 値をバインド
@@ -21,14 +21,14 @@ class ResetDb extends db
 	}
 
 	// PWリセット
-	public function updatePassword($MemberId, $LoginPassword){
+	public function updatePassword($MemberId, $MemberPASS){
 		// SQL文
-		$sql = 'UPDATE salesforce.account SET LoginPassword__c=:LoginPassword, PwResetUrl__c=:PwResetUrl, PwResetDeadline__c=:PwResetDeadline WHERE MemberId__c=:MemberId;';
+		$sql = 'UPDATE salesforce.RentalAgreement__c SET MemberPASS__c=:MemberPASS, PwResetUrl__c=:PwResetUrl, PwResetDeadline__c=:PwResetDeadline WHERE MemberID__c=:MemberId;';
 		$stmt = $this->pdo->prepare($sql);
 
 		// 値をバインド
 		$stmt->bindValue(':MemberId', $MemberId);
-		$stmt->bindValue(':LoginPassword', hash('sha256', $LoginPassword));
+		$stmt->bindValue(':MemberPASS', hash('sha256', $MemberPASS));
 		$stmt->bindValue(":PwResetUrl", null, PDO::PARAM_NULL);
 		$stmt->bindValue(":PwResetDeadline", null, PDO::PARAM_NULL);
 
