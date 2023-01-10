@@ -9,6 +9,26 @@
 	$Msg = '';
 
 	try {
+
+		$ip = $_SERVER['REMOTE_ADDR'];
+		// IP制限確認
+		$ip_within_range = false;
+		$white_list = file_get_contents('../common/WhiteList');
+		$white_list = explode( "\ｎ", $white_list );
+		$row = count( $white_list );
+		for( $i=0;$i<$row;$i++ ){
+			$ip_address = explode( "-", $white_list[$i]);
+			$ip_start = $ip_address[0];
+			$ip_end = $ip_address[1];
+
+			if(ip2long($ip_start) <= ip2long($ip) && ip2long($ip) <= ip2long($ip_end)){
+				$ip_within_range = true;
+			}
+		}
+
+		echo $ip_start . '<=' . $ip . '<=' . $ip_end;
+		var_dump($ip_within_range);
+
 		// ログインCheck
 		$Db = new loginDb();
 		switch(DEBUG){
